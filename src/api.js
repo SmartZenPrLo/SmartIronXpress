@@ -1,0 +1,22 @@
+import { API_BASE_URL } from './config';
+
+export const API_OTP_URL = `${API_BASE_URL}/otp/send`;
+export const API_VERIFY_OTP_URL = `${API_BASE_URL}/otp/verify`;
+export const API_USER_REGISTER_URL = `${API_BASE_URL}/users/register`;
+export const API_LOGIN_URL = `${API_BASE_URL}/login/user`;
+export const API_USER_INFO_URL = `${API_BASE_URL}/user/info`;
+export const API_USER_UPDATE_URL = `${API_BASE_URL}/user/update`;
+export const API_USER_DELETE_URL = `${API_BASE_URL}/user/deactivate`;
+export const API_LAUNDRY_LIST_URL = `${API_BASE_URL}/laundry/list`;
+export const API_LAUNDRY_ORDER_URL = `${API_BASE_URL}/laundryCompany/create`;
+export const API_LAUNDRY_ORDER_LIST_URL = `${API_BASE_URL}/laundryCompany/orderlist`;
+export const API_LAUNDRY_ORDER_CANCEL_URL = `${API_BASE_URL}/laundryCompany/OrderStatusUpdate`;
+export const API_FORGET_USER_PASSWORD_URL = `${API_BASE_URL}/customer/forgetPassword`;
+export const API_GET_LOGO_FILENAME_URL = `${API_BASE_URL}/upload/logoget`;
+export const API_PRICE_LIST_URL = `${API_BASE_URL}/smartlaundrybusiness/pricingdetails`;
+export const API_ORDER_SUMMARY_VIEW_URL = `${API_BASE_URL}/laundryCompany/OrderDetailsSummarylist`;
+export const API_FCM_TOKEN_UPDATE_USER_URL = `${API_BASE_URL}/fcm/updatetokenuser`;
+export const API_LAUNDRY_SLOT_READ = `${API_BASE_URL}/companySlots/read`;
+export const API_LAUNDRY_SCHEDULE_READ = `${API_BASE_URL}/schedules/read`;
+export const API_BRANCH_LIST = `${API_BASE_URL}/Branch/List`;
+export const API_ORDER_SUMMARY_ADD_URL = `${API_BASE_URL}/laundryCompany/createOrderDetailsSummary`;
