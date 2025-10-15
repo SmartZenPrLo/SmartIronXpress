@@ -187,7 +187,7 @@ const ErrorModal = ({ visible, message, onClose }) => {
           <View style={styles.errorIconContainer}>
             <Icon name="alert-circle-outline" size={50} color="#F44336" />
           </View>
-          <Text style={styles.errorTitle}>Oops!</Text>
+          {/* <Text style={styles.errorTitle}>Oops!</Text> */}
           <Text style={styles.errorMessage}>{message}</Text>
           <TouchableOpacity 
             style={styles.modalCloseButton} 

@@ -20,3 +20,4 @@ export const API_LAUNDRY_SLOT_READ = `${API_BASE_URL}/companySlots/read`;
 export const API_LAUNDRY_SCHEDULE_READ = `${API_BASE_URL}/schedules/read`;
 export const API_BRANCH_LIST = `${API_BASE_URL}/Branch/List`;
 export const API_ORDER_SUMMARY_ADD_URL = `${API_BASE_URL}/laundryCompany/createOrderDetailsSummary`;
+export const API_USER_ADDRESS = `${API_BASE_URL}/userAddress/address`;

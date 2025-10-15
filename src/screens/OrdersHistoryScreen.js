@@ -210,7 +210,7 @@ const OrdersHistoryScreen = () => {
         <View style={styles.emptyContainer}>
           <Text style={styles.emptyTitle}>No Orders Yet</Text>
           <Text style={styles.emptyText}>
-            You haven't placed any laundry orders yet.
+            You haven't placed any Ironing orders yet.
             When you do, they will appear here.
           </Text>
           {/* <TouchableOpacity style={styles.shopNowButton}>

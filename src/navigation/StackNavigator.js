@@ -12,6 +12,7 @@ import RegisterScreen from '../screens/RegisterScreen';
 import PlaceOrderScreen from '../screens/PlaceOrderScreen';
 import TrackOrder from '../screens/TrackOrder';
 import ForgetPasswordScreen from '../screens/ForgetPasswordScreen';
+import AddressEditScreen from '../screens/AddressEditScreen';
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
@@ -24,6 +25,7 @@ const StackNavigator = () => {
       <Stack.Screen name="PhoneNumber" component={PhoneNumber} options={{ headerShown: false}} />
       <Stack.Screen name="OtpVerification" component={OtpVerification} options={{ headerShown: false}} />
       <Stack.Screen name="MapScreen" component={MapScreen} options={{ headerShown: false}} />
+        <Stack.Screen name="AddressEditScreen" component={AddressEditScreen} options={{ headerShown: false}} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false}} />
       <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="PlaceOrderScreen" component={PlaceOrderScreen} options={{ headerShown: false }} />

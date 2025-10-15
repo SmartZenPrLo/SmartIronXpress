@@ -15,26 +15,26 @@ const { width, height } = Dimensions.get('window');
 const slides = [
   {
     id: '1',
-    title: 'Easy Laundry Service',
-    description: 'Schedule pickups and deliveries with just a few taps',
+    title: 'Effortless Ironing Service',
+    description: 'Book your ironing pickup in seconds and let us handle the rest.',
     icon: 'shirt-outline',
   },
   {
     id: '2',
-    title: 'Track Your Orders',
-    description: 'Know exactly where your laundry is at all times',
+    title: 'Real-Time Order Tracking',
+    description: 'Easily track your clothes from pickup to perfectly pressed delivery.',
     icon: 'location-outline',
   },
   {
     id: '3',
-    title: 'Multiple Service Options',
-    description: 'Choose from wash & fold, dry cleaning, and more',
+    title: 'Custom Ironing Options',
+    description: 'Choose your ironing style — light press, crisp finish, or steam iron.',
     icon: 'options-outline',
   },
   {
     id: '4',
-    title: 'Fast Delivery',
-    description: 'Get your clean clothes back within 24 hours',
+    title: 'Fast & Reliable Delivery',
+    description: 'Receive your neatly ironed clothes within 24 hours — fresh and ready to wear.',
     icon: 'time-outline',
   },
 ];

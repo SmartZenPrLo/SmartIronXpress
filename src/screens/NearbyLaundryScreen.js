@@ -40,7 +40,7 @@ const NearbyLaundryScreen = () => {
       const response = await fetch(API_LAUNDRY_LIST_URL);
       
       if (!response.ok) {
-        throw new Error('Failed to fetch laundry details');
+        throw new Error('Failed to fetch Ironing details');
       }
 
       const result = await response.json();
@@ -51,7 +51,7 @@ const NearbyLaundryScreen = () => {
         await fetchLogoFilename(company.CompanyId);
       }
     } catch (err) {
-      console.error('Error fetching laundry details:', err);
+      console.error('Error fetching Ironing details:', err);
     }
   };
 
@@ -102,7 +102,7 @@ const NearbyLaundryScreen = () => {
             )}
             
             <Text style={styles.companyName}>
-              {laundry?.CompanyName || 'Laundry Service'}
+              {laundry?.CompanyName || 'Ironing Service'}
             </Text>
             
             <Text style={styles.companyDescription}>

@@ -294,7 +294,7 @@ const LoginScreen = () => {
               <Image source={AppIcon} style={styles.appIcon} />
             </View>
             <Text style={styles.appName}>Smart Iron Xpress</Text>
-            <Text style={styles.tagline}>Fresh & Clean, Right at Your Fingertips</Text>
+<Text style={styles.tagline}>Perfectly Pressed, Just a Tap Away</Text>
           </View>
 
           {/* Form Section */}

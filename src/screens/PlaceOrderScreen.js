@@ -48,6 +48,7 @@ const PlaceOrderScreen = () => {
   const [selectedSchedule, setSelectedSchedule] = useState(null);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
+const [orderId, setOrderId] = useState(null);
 
   const [availableSlots, setAvailableSlots] = useState([]);
   const [allSchedules, setAllSchedules] = useState([]);
@@ -178,7 +179,7 @@ const PlaceOrderScreen = () => {
     try {
       setLoading(true);
       if (!laundry?.CompanyId || !BranchID) {
-        throw new Error('Laundry company ID or BranchID is missing');
+        throw new Error('Ironing company ID or BranchID is missing');
       }
 
       const url = `${API_PRICE_LIST_URL}?CompanyId=${encodeURIComponent(laundry.CompanyId)}&BranchID=${encodeURIComponent(BranchID)}`;
@@ -272,8 +273,10 @@ const PlaceOrderScreen = () => {
       });
 
       const result = await response.json();
-
+console.log("orderid-=-=-=-=-=-=-=-=-=",result);
       if (response.ok) {
+              const newOrderId = result.orderId;
+               setOrderId(newOrderId);
         setSuccessModalVisible(true);
       } else {
         setErrorMessage(result.message || 'Failed to place order. Please try again.');
@@ -436,7 +439,7 @@ const PlaceOrderScreen = () => {
       ) : (
         <ScrollView style={styles.content}>
           <View style={styles.laundryCard}>
-            <Text style={styles.sectionTitle}>Selected Laundry</Text>
+            <Text style={styles.sectionTitle}>Selected Ironing</Text>
             <Text style={styles.laundryName}>{laundry?.CompanyName}</Text>
             <Text style={styles.laundryAddress}>
               <Icon name="map-marker" size={14} color="#46345B" /> {laundry?.FullAddress}
@@ -490,7 +493,7 @@ const PlaceOrderScreen = () => {
               ))
             ) : (
               <View style={styles.noServicesContainer}>
-                <Text style={styles.noServicesText}>No services available for this laundry service.</Text>
+                <Text style={styles.noServicesText}>No services available for this Ironing service.</Text>
               </View>
             )}
           </View>
@@ -666,7 +669,7 @@ const PlaceOrderScreen = () => {
             </Text>
             
             <Text style={styles.successMessage}>
-              Your order has been placed with {laundry?.CompanyName}. They will contact you shortly.
+              Your order <Text style={{ fontWeight: 'bold',color:"#F5761A", }}>#{orderId} </Text>has been placed with {laundry?.CompanyName}. They will contact you shortly.
             </Text>
             
             <TouchableOpacity 

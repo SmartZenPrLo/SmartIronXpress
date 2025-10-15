@@ -60,6 +60,7 @@ const ProfileScreen = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [errorModalVisible, setErrorModalVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+const [userAddress, setUserAddress] = useState('');
 
   useEffect(() => {
     const fetchUserId = async () => {
@@ -79,11 +80,13 @@ const ProfileScreen = () => {
     try {
       const response = await fetch(`${API_USER_INFO_URL}/${userId}`);
       const data = await response.json();
-      
+      console.log("user data -=-=-=-=-=-=-=-=",data);
       if (response.ok) {
         setUserData(data);
         setEditedName(data.Username);
         setEditedEmail(data.Email);
+              setUserAddress(data.FullAddress || '');
+
       } else {
         console.error('Error fetching user data:', data.message);
       }
@@ -212,9 +215,29 @@ const confirmDeleteAccount = async () => {
       year: 'numeric' 
     }).format(date);
   };
-
+const handleAddressPress = () => {
+  navigation.navigate('AddressEditScreen', { 
+    existingAddress: userData.FullAddress,
+    Latitude: userData.Latitude,
+    Longitude: userData.Longitude, // Your API's FullAddress field
+    userId: userId // Pass userId for API updates
+  });
+};
   const renderProfileOption = (iconName, title, subtitle, onPress, color = '#FF7518') => (
-    <TouchableOpacity style={styles.profileOption} onPress={onPress}>
+    <TouchableOpacity style={styles.profileOption}>
+      <View style={[styles.optionIconContainer, { backgroundColor: `${color}15` }]}>
+        <Icon name={iconName} size={22} color={color} />
+      </View>
+      <View style={styles.optionTextContainer}>
+        <Text style={styles.optionTitle}>{title}</Text>
+        {subtitle && <Text style={styles.optionSubtitle}>{subtitle}</Text>}
+      </View>
+      {/* <Icon name="chevron-right" size={20} color="#999" /> */}
+    </TouchableOpacity>
+  );
+  
+  const renderProfileOptionLocation = (iconName, title, subtitle, onPress, color = '#FF7518') => (
+    <TouchableOpacity style={styles.profileOption} onPress={handleAddressPress} >
       <View style={[styles.optionIconContainer, { backgroundColor: `${color}15` }]}>
         <Icon name={iconName} size={22} color={color} />
       </View>
@@ -225,6 +248,7 @@ const confirmDeleteAccount = async () => {
       <Icon name="chevron-right" size={20} color="#999" />
     </TouchableOpacity>
   );
+
 
   if (loading) {
     return (
@@ -305,7 +329,7 @@ const confirmDeleteAccount = async () => {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Contact Information</Text>
             {renderProfileOption('phone', 'Phone Number', userData.PhoneNo || 'Not provided', null, '#4ECDC4')}
-            {renderProfileOption('location-on', 'Address', userData.FullAddress || 'Not provided', null, '#45B7D1')}
+            {renderProfileOptionLocation('location-on', 'Address', userData.FullAddress || 'Not provided', null, '#45B7D1')}
           </View>
 
           {/* Account Actions */}
